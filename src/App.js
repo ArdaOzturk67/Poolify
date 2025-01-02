@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import Classes from './pages/Classes';
 import Cart from './pages/Cart';
 import Settings from './pages/Settings';
+import MyClasses from './pages/MyClasses';
 import AdministratorDashboard from './pages/AdministratorDashboard';
 import CoachDashboard from './pages/CoachDashboard';
 import LogOut from './pages/LogOut';
@@ -94,6 +95,14 @@ function App() {
           element={
             <ProtectedRoute currentUser={currentUser} allowedRoles={['administrator']}>
               <AdministratorDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-classes"
+          element={
+            <ProtectedRoute currentUser={currentUser}>
+              <MyClasses/>
             </ProtectedRoute>
           }
         />
